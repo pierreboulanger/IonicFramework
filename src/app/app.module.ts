@@ -24,7 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
-  apiKey: "TO_BE_ADDED",
+  apiKey: "AIzaSyB1VEfV98VPvJ6Nyi8rjaaCX1mTNVPL2NI",
   authDomain: "topflop-test.firebaseapp.com",
   databaseURL: "https://topflop-test.firebaseio.com",
   storageBucket: "topflop-test.appspot.com",

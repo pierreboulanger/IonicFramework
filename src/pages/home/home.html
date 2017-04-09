@@ -1,5 +1,10 @@
 <ion-header>
   <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="logout()">
+        Log out
+      </button>
+    </ion-buttons>
     <ion-title>Home</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addGame()">
@@ -25,4 +30,6 @@
       <p>Les Patrons vs {{game.opponent}}</p>
     </ion-item>
   </ion-list>
+
+  <!-- <input type="submit" ng-click="logout()" value="Log out" /> -->
 </ion-content>

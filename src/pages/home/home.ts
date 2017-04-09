@@ -2,16 +2,30 @@ import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
 
+import { LoginPage } from '../login/login';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
   games: FirebaseListObservable<any>;
+  current_user = window.localStorage.getItem('currentuser');
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public actionSheetCtrl: ActionSheetController, af: AngularFire) {
 
     this.games = af.database.list('/games');
+
+    if (!this.isLoggedin()) {
+      console.log('You are not logged in');
+      this.navCtrl.push(LoginPage);
+    }
+  }
+
+  isLoggedin(){
+    if (this.current_user) {
+      return true;
+    }
   }
 
   addGame(){
